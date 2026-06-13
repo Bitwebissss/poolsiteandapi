@@ -322,9 +322,20 @@
   // Theme is handled by shared assets/js/theme.js (window.Theme), including
   // applying data-bs-theme and toggling .active on [data-theme] buttons.
   // This page only needs to refresh its translated label text.
+  const THEME_ICONS = {
+    light: ['fa-regular', 'fa-sun'],
+    dark:  ['fa-regular', 'fa-moon'],
+    auto:  ['fa-solid',   'fa-circle-half-stroke'],
+  };
   const applyThemeLabel = () => {
+    const theme = window.Theme.get();
     const lbl = $('theme-label');
-    if (lbl) lbl.textContent = t(`theme.${window.Theme.get()}`);
+    if (lbl) lbl.textContent = t(`theme.${theme}`);
+    const ico = $('theme-icon');
+    if (ico) {
+      const [style, name] = THEME_ICONS[theme] || THEME_ICONS.auto;
+      ico.className = `${style} ${name}`;
+    }
   };
 
   const toast = (msg, icon = 'circle-info', type = 'info', dur = 5000) => {
