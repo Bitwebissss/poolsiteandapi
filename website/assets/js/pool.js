@@ -5,6 +5,7 @@
   const LS_BASE  = 'mp-base';
   const LS_POOL  = 'mp-pool';
   const LS_MINER = 'mp-miner-';
+  const LS_TAB   = 'mp-tab';
 
   const PAGE_SIZE        = 20;
   const MINER_BLOCKS_PAGE = 10;
@@ -2234,9 +2235,19 @@
     document.querySelectorAll('.mp-tab').forEach(btn => {
       btn.addEventListener('shown.bs.tab', () => {
         S.activeTab = (btn.getAttribute('data-bs-target') || '').replace('#pane-', '');
+        localStorage.setItem(LS_TAB, S.activeTab);
         renderActiveTab();
       });
     });
+
+    // Restore saved tab — after listeners attached, no double-render edge case
+    const savedTab = localStorage.getItem(LS_TAB);
+    if (savedTab) {
+      const savedBtn = document.querySelector(`.mp-tab[data-bs-target="#pane-${savedTab}"]`);
+      if (savedBtn && !savedBtn.classList.contains('active')) {
+        bootstrap.Tab.getOrCreateInstance(savedBtn).show();
+      }
+    }
 
     loadPools();
   };
