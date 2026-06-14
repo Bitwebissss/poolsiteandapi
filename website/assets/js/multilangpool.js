@@ -18,7 +18,6 @@ window.mpLang = {
 
     'card.pool': 'Pool',
     'card.round': 'Current Round',
-    'card.solo': 'Solo Mining',
     'card.coin': 'Coin',
 
     'coin.network': 'Network',
@@ -50,9 +49,7 @@ window.mpLang = {
     'pool.interval': 'Pay Interval',
     'pool.total-paid': 'Total Paid',
 
-    'round.effort': 'Effort',
-    'round.effort-pool': 'Pool Effort',
-    'round.effort-pool-tip': 'Combined effort of all miners since the last found block. In Solo mode each miner is paid individually — check "My Miner" for your personal effort.',
+    'round.effort': 'Pool Effort',
     'round.ttf': 'Est. TTF',
     'round.work-height': 'Current Block',
     'round.last-block': 'Last Found',
@@ -191,7 +188,6 @@ window.mpLang = {
 
     'card.pool': 'Пул',
     'card.round': 'Текущий раунд',
-    'card.solo': 'Соло майнинг',
     'card.coin': 'Монета',
 
     'coin.network': 'Сеть',
@@ -223,9 +219,7 @@ window.mpLang = {
     'pool.interval': 'Интервал выплат',
     'pool.total-paid': 'Всего выплачено',
 
-    'round.effort': 'Усилие',
-    'round.effort-pool': 'Усилие пула',
-    'round.effort-pool-tip': 'Суммарное усилие всех майнеров пула с момента последнего найденного блока. В режиме Соло каждый майнер получает выплату индивидуально — личное усилие смотри во вкладке «Мой майнер».',
+    'round.effort': 'Усилие пула',
     'round.ttf': 'Ожид. время',
     'round.work-height': 'Текущий блок',
     'round.last-block': 'Последний найден',
@@ -364,7 +358,6 @@ window.mpLang = {
 
     'card.pool': 'Пул',
     'card.round': 'Поточний раунд',
-    'card.solo': 'Соло майнінг',
     'card.coin': 'Монета',
 
     'coin.network': 'Мережа',
@@ -396,9 +389,7 @@ window.mpLang = {
     'pool.interval': 'Інтервал виплат',
     'pool.total-paid': 'Всього виплачено',
 
-    'round.effort': 'Зусилля',
-    'round.effort-pool': 'Зусилля пулу',
-    'round.effort-pool-tip': 'Сумарне зусилля всіх майнерів пулу з моменту останнього знайденого блоку. В режимі Соло кожен майнер отримує виплату індивідуально — особисте зусилля дивись у вкладці «Мій майнер».',
+    'round.effort': 'Зусилля пулу',
     'round.ttf': 'Очік. час',
     'round.work-height': 'Поточний блок',
     'round.last-block': 'Останній знайдено',
@@ -537,7 +528,6 @@ window.mpLang = {
 
     'card.pool': '矿池',
     'card.round': '当前轮次',
-    'card.solo': '独立挖矿',
     'card.coin': '币种',
 
     'coin.network': '网络',
@@ -569,9 +559,7 @@ window.mpLang = {
     'pool.interval': '结算周期',
     'pool.total-paid': '累计结算',
 
-    'round.effort': '努力值',
-    'round.effort-pool': '矿池算力贡献',
-    'round.effort-pool-tip': '自上次找到区块以来，所有矿工的总努力值。Solo模式下每位矿工单独获得奖励——请在"我的矿工"标签页查看个人努力值。',
+    'round.effort': '矿池算力贡献',
     'round.ttf': '预计时间',
     'round.work-height': '当前区块',
     'round.last-block': '上次找到',
