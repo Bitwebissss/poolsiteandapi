@@ -1017,7 +1017,7 @@
     if (!S.poolId) { S.serverDown ? showServerDown(wrap) : showNoPool(wrap); return; }
     const pid = S.poolId;
 
-    const isInit = page === 0 && !wrap.querySelector('.mp-table-box');
+    const isInit = page === 0 && (!wrap.querySelector('.mp-table-box') || wrap.dataset.renderedPool !== pid);
     if (isInit) { wrap.innerHTML = ''; showLoading(wrap); }
 
     try {
@@ -1089,6 +1089,7 @@
       box.appendChild(table);
       box.appendChild(buildPager(page, hasNext, pg => renderBlocks(pg)));
       wrap.appendChild(box);
+      wrap.dataset.renderedPool = pid;
       wrap.classList.remove('mp-height-locked');
       wrap.style.removeProperty('--lock-h');
     } catch { wrap.classList.remove('mp-height-locked'); wrap.style.removeProperty('--lock-h'); wrap.innerHTML = ''; showError(wrap); }
