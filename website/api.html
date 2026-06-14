@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +7,22 @@
   <title>Miningcore API Docs</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/docs.css">
+  <link rel="stylesheet" href="assets/css/pool.css">
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top mc-navbar" id="mc-navbar">
+  <nav class="navbar navbar-expand-lg sticky-top mp-navbar">
     <div class="container-xl">
-      <a class="navbar-brand mc-brand" href="#">
-        <i class="fa-solid fa-pickaxe me-2"></i>
+      <a class="navbar-brand mp-brand" href="#">
+        <i class="fa-solid fa-pickaxe"></i>
         <span>Miningcore</span>
-        <span class="mc-brand-sub">API</span>
+        <span class="mp-brand-sub">API</span>
       </a>
       <div class="d-flex align-items-center gap-2 ms-auto">
-        <a class="btn mc-theme-btn" href="/" aria-label="Pool" title="Pool">
+        <a class="mp-nav-btn" href="/" aria-label="Pool" title="Pool">
           <i class="fa-solid fa-gauge-high"></i>
-          <span class="ms-1 d-none d-sm-inline">Pool</span>
+          <span class="d-none d-sm-inline">Pool</span>
         </a>
         <div class="dropdown">
           <button class="mp-nav-btn mp-pool-btn dropdown-toggle" type="button" id="pool-select"
@@ -33,14 +33,14 @@
           <ul class="dropdown-menu dropdown-menu-end mp-nav-menu" id="pool-menu"></ul>
         </div>
         <div class="dropdown">
-          <button class="btn mc-theme-btn dropdown-toggle" id="theme-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-circle-half-stroke" id="theme-icon"></i>
-            <span id="theme-label" class="ms-1 d-none d-sm-inline">Auto</span>
+          <button class="mp-nav-btn dropdown-toggle" id="theme-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i id="theme-icon" class="fa-solid fa-circle-half-stroke"></i>
+            <span id="theme-label" class="d-none d-sm-inline">Auto</span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end mc-theme-menu">
-            <li><button class="dropdown-item" data-theme="light"><i class="fa-regular fa-sun me-2"></i>Light</button></li>
-            <li><button class="dropdown-item" data-theme="dark"><i class="fa-regular fa-moon me-2"></i>Dark</button></li>
-            <li><button class="dropdown-item" data-theme="auto"><i class="fa-solid fa-circle-half-stroke me-2"></i>Auto</button></li>
+          <ul class="dropdown-menu dropdown-menu-end mp-nav-menu mp-theme-menu">
+            <li><button class="dropdown-item" data-theme="light"><i class="fa-regular fa-sun"></i><span>Light</span></button></li>
+            <li><button class="dropdown-item" data-theme="dark"><i class="fa-regular fa-moon"></i><span>Dark</span></button></li>
+            <li><button class="dropdown-item" data-theme="auto"><i class="fa-solid fa-circle-half-stroke"></i><span>Auto</span></button></li>
           </ul>
         </div>
       </div>
@@ -64,22 +64,22 @@
     </div>
 
     <!-- Tabs -->
-    <ul class="nav mc-tabs mb-4" id="api-tabs" role="tablist">
+    <ul class="nav mp-tabs mb-4" id="api-tabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link mc-tab active" id="tab-pool" data-bs-toggle="tab" data-bs-target="#pane-pool" type="button" role="tab">
-          <i class="fa-solid fa-server me-2"></i>Pool API
+        <button class="nav-link mp-tab active" id="tab-pool" data-bs-toggle="tab" data-bs-target="#pane-pool" type="button" role="tab">
+          <i class="fa-solid fa-server"></i><span>Pool API</span>
           <span class="mc-tab-count" id="count-pool"></span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link mc-tab" id="tab-miner" data-bs-toggle="tab" data-bs-target="#pane-miner" type="button" role="tab">
-          <i class="fa-solid fa-person-digging me-2"></i>Miner API
+        <button class="nav-link mp-tab" id="tab-miner" data-bs-toggle="tab" data-bs-target="#pane-miner" type="button" role="tab">
+          <i class="fa-solid fa-person-digging"></i><span>Miner API</span>
           <span class="mc-tab-count" id="count-miner"></span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link mc-tab" id="tab-ws" data-bs-toggle="tab" data-bs-target="#pane-ws" type="button" role="tab">
-          <i class="fa-solid fa-bolt me-2"></i>WebSocket
+        <button class="nav-link mp-tab" id="tab-ws" data-bs-toggle="tab" data-bs-target="#pane-ws" type="button" role="tab">
+          <i class="fa-solid fa-bolt"></i><span>WebSocket</span>
         </button>
       </li>
     </ul>
