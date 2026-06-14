@@ -3,7 +3,6 @@ window.mpLang = {
   en: {
     'lang.name': 'English',
 
-    'nav.select-pool': '— select pool —',
     'nav.api': 'API Docs',
 
     'theme.light': 'Light',
@@ -25,10 +24,6 @@ window.mpLang = {
     'coin.ticker': 'Ticker',
     'coin.algo': 'Algo',
     'coin.website': 'Website',
-    'coin.twitter': 'Twitter',
-    'coin.discord': 'Discord',
-    'coin.telegram': 'Telegram',
-    'coin.github': 'GitHub',
     'coin.market': 'Market',
 
     'net.height': 'Block Height',
@@ -173,7 +168,6 @@ window.mpLang = {
   ru: {
     'lang.name': 'Русский',
 
-    'nav.select-pool': '— выбрать пул —',
     'nav.api': 'API документация',
 
     'theme.light': 'Светлая',
@@ -195,10 +189,6 @@ window.mpLang = {
     'coin.ticker': 'Тикер',
     'coin.algo': 'Алгоритм',
     'coin.website': 'Сайт',
-    'coin.twitter': 'Twitter',
-    'coin.discord': 'Discord',
-    'coin.telegram': 'Telegram',
-    'coin.github': 'GitHub',
     'coin.market': 'Рынок',
 
     'net.height': 'Высота блока',
@@ -343,7 +333,6 @@ window.mpLang = {
   uk: {
     'lang.name': 'Українська',
 
-    'nav.select-pool': '— обрати пул —',
     'nav.api': 'API документація',
 
     'theme.light': 'Світла',
@@ -365,10 +354,6 @@ window.mpLang = {
     'coin.ticker': 'Тікер',
     'coin.algo': 'Алгоритм',
     'coin.website': 'Сайт',
-    'coin.twitter': 'Twitter',
-    'coin.discord': 'Discord',
-    'coin.telegram': 'Telegram',
-    'coin.github': 'GitHub',
     'coin.market': 'Ринок',
 
     'net.height': 'Висота блоку',
@@ -513,7 +498,6 @@ window.mpLang = {
   zh: {
     'lang.name': '中文',
 
-    'nav.select-pool': '— 选择矿池 —',
     'nav.api': 'API 文档',
 
     'theme.light': '浅色',
@@ -535,10 +519,6 @@ window.mpLang = {
     'coin.ticker': '代码',
     'coin.algo': '算法',
     'coin.website': '官网',
-    'coin.twitter': 'Twitter',
-    'coin.discord': 'Discord',
-    'coin.telegram': 'Telegram',
-    'coin.github': 'GitHub',
     'coin.market': '市场',
 
     'net.height': '区块高度',
