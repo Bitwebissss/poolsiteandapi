@@ -8,7 +8,7 @@
   const LS_POOL = 'mp-pool';
 
   const cfg = {
-    baseUrl: localStorage.getItem('mc_base_url') || 'https://pooltest.bitwebcore.net',
+    baseUrl: localStorage.getItem('mc_base_url') || 'https://pool-api.bitwebcore.net',
     poolId:  localStorage.getItem(LS_POOL)       || '',
   };
 
@@ -91,7 +91,7 @@
 
   /* -- WEBSOCKET BASE URL NORMALIZATION ----------------------- */
   function getWsBaseUrl(rawBaseUrl) {
-    const fallback = 'wss://pooltest.bitwebcore.net';
+    const fallback = 'wss://pool-api.bitwebcore.net';
     const input = String(rawBaseUrl || '').trim();
     if (!input) return fallback;
 
@@ -669,7 +669,7 @@
     const pre = document.createElement('pre');
     pre.className = 'ep-example';
     const codeEx =
-`const ws = new WebSocket('ws://pooltest.bitwebcore.net/notifications?poolId=bte1');
+`const ws = new WebSocket('ws://pool-api.bitwebcore.net/notifications?poolId=bte1');
 
 ws.onopen = () => console.log('connected');
 
