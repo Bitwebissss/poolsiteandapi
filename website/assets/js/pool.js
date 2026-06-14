@@ -173,7 +173,13 @@
     miner:         (id, a)         => api._get(`/api/pools/${enc(id)}/miners/${enc(a)}`),
     minerBlocks:   (id, a)         => api._get(`/api/pools/${enc(id)}/miners/${enc(a)}/blocks`),
     minerPayments: (id, a)         => api._get(`/api/pools/${enc(id)}/miners/${enc(a)}/payments`),
-    minerSettings: (id, a)         => api._get(`/api/pools/${enc(id)}/miners/${enc(a)}/settings`),
+    minerSettings: async (id, a) => {
+      const url = `${S.base}/api/pools/${enc(id)}/miners/${enc(a)}/settings`;
+      const r = await fetch(url, { headers: { Accept: 'application/json' } });
+      if (r.status === 404) return null;          // no settings saved yet — not an error
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    },
     async minerSettingsUpdate(id, a, body) {
       const url = `${S.base}/api/pools/${enc(id)}/miners/${enc(a)}/settings`;
       const r = await fetch(url, {
