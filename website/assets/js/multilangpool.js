@@ -163,6 +163,8 @@ window.mpLang = {
     'ui.connect': 'Connect',
     'settings.connection': 'Connection',
     'settings.api-url': 'API Server URL',
+
+    'footer.source': 'Source',
   },
 
   ru: {
@@ -328,6 +330,8 @@ window.mpLang = {
     'ui.connect': 'Подключить',
     'settings.connection': 'Подключение',
     'settings.api-url': 'URL API сервера',
+
+    'footer.source': 'Исходники',
   },
 
   uk: {
@@ -493,6 +497,8 @@ window.mpLang = {
     'ui.connect': 'Підключити',
     'settings.connection': 'Підключення',
     'settings.api-url': 'URL API сервера',
+
+    'footer.source': 'Джерело',
   },
 
   zh: {
@@ -658,6 +664,8 @@ window.mpLang = {
     'ui.connect': '连接',
     'settings.connection': '连接设置',
     'settings.api-url': 'API 服务器地址',
+
+    'footer.source': '源代码',
   },
 
   ko: {
@@ -823,6 +831,8 @@ window.mpLang = {
     'ui.connect': '연결',
     'settings.connection': '연결',
     'settings.api-url': 'API 서버 URL',
+
+    'footer.source': '소스',
   },
 
   ja: {
@@ -988,6 +998,8 @@ window.mpLang = {
     'ui.connect': '接続',
     'settings.connection': '接続設定',
     'settings.api-url': 'APIサーバーURL',
+
+    'footer.source': 'ソース',
   },
 
   de: {
@@ -1153,6 +1165,8 @@ window.mpLang = {
     'ui.connect': 'Verbinden',
     'settings.connection': 'Verbindung',
     'settings.api-url': 'API-Server-URL',
+
+    'footer.source': 'Quellcode',
   },
 
   es: {
@@ -1318,5 +1332,7 @@ window.mpLang = {
     'ui.connect': 'Conectar',
     'settings.connection': 'Conexión',
     'settings.api-url': 'URL del servidor API',
+
+    'footer.source': 'Código fuente',
   },
 };

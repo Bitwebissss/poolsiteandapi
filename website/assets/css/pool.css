@@ -1091,3 +1091,34 @@ a:hover { text-decoration: underline; }
   .ep-summary { display: none; }
   .mc-config-label { width: auto; }
 }
+
+/* Footer */
+.mp-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+  padding: 14px 0 18px;
+}
+.mp-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.mp-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+}
+.mp-footer-link:hover { color: var(--tab-active); text-decoration: none; }
+.mp-footer-link i { font-size: 0.95rem; }
+
+@media (max-width: 576px) {
+  .mp-footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+}
