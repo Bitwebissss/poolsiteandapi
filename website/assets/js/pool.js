@@ -1109,7 +1109,10 @@
     const card = mk('div', 'mp-gen-card');
     card.appendChild(txt('div', 'mp-gen-title', t('start.generator')));
 
-    const host = (() => { try { return new URL(S.base).hostname; } catch { return 'pool.host'; } })();
+    const apiHost = (() => { try { return new URL(S.base).hostname; } catch { return 'pool.host'; } })();
+    const miningDomains = Array.isArray(p.miningDomains) ? p.miningDomains.filter(Boolean) : [];
+    // Fall back to the API hostname only if the pool didn't publish a dedicated mining domain
+    const host = miningDomains.length ? miningDomains[0] : apiHost;
 
     const row1    = mk('div', 'mp-gen-row');
     const addrGrp = mk('div', 'mp-gen-group grow');
@@ -1136,6 +1139,18 @@
 
     const stratumRow = mk('div', 'mp-gen-row');
 
+    const domainGrp = mk('div', 'mp-gen-group' + (miningDomains.length > 1 ? '' : ' mp-gen-group--hidden'));
+    domainGrp.appendChild(txt('label', 'mp-gen-lbl', t('start.mining-server')));
+    const domainSel = mk('select', 'mp-gen-select');
+    domainSel.id = 'gen-domain';
+    miningDomains.forEach(d => {
+      const opt = document.createElement('option');
+      opt.value = d; opt.textContent = d;
+      domainSel.appendChild(opt);
+    });
+    domainGrp.appendChild(domainSel);
+    const getMiningHost = () => (miningDomains.length > 1 ? (domainSel.value || host) : host);
+
     const protGrp = mk('div', 'mp-gen-group mp-gen-group--hidden');
     protGrp.appendChild(txt('label', 'mp-gen-lbl', t('start.proto-label')));
     const protSel = mk('select', 'mp-gen-select');
@@ -1151,11 +1166,11 @@
     const stratumInp = mk('input', 'mp-gen-input mp-stratum-inp');
     stratumInp.type = 'text';
     stratumInp.id = 'gen-stratum';
-    stratumInp.placeholder = `stratum+tcp://${host}:3032`;
+    stratumInp.placeholder = `stratum+tcp://${getMiningHost()}:3032`;
     stratumInp.autocomplete = 'off';
     stratumInp.spellcheck = false;
     stratumGrp.appendChild(stratumInp);
-    stratumRow.append(protGrp, stratumGrp);
+    stratumRow.append(domainGrp, protGrp, stratumGrp);
 
     const row2    = mk('div', 'mp-gen-row');
     const portGrp = mk('div', 'mp-gen-group');
@@ -1285,7 +1300,7 @@
       const proto   = tlsAuto
         ? (protSel.value === 'ssl' ? 'stratum+ssl' : 'stratum+tcp')
         : (hasTls ? 'stratum+ssl' : 'stratum+tcp');
-      const computed = `${proto}://${host}:${port}`;
+      const computed = `${proto}://${getMiningHost()}:${port}`;
       if (!stratumInp.dataset.manual) stratumInp.value = computed;
       const server = safe(stratumInp.value) || computed;
       const addr   = safe(addrInp.value);
@@ -1335,6 +1350,7 @@
     stratumInp.addEventListener('input', () => { stratumInp.dataset.manual = '1'; buildCmd(); });
     portSel.addEventListener('change', () => { delete stratumInp.dataset.manual; buildCmd(); });
     protSel.addEventListener('change', () => { delete stratumInp.dataset.manual; buildCmd(); });
+    domainSel.addEventListener('change', () => { delete stratumInp.dataset.manual; buildCmd(); });
 
     const toggleGpu = () => {
       const gpu = modeSel.value !== 'cpu';
