@@ -44,7 +44,9 @@
   --json-null:    #9ca3af;
   --badge-misc-bg:#f1f5f9;
   --badge-misc:   #475569;
-} {
+}
+
+[data-bs-theme="dark"] {
   --bg:           #0b1120;
   --surface:      #131f33;
   --surface-2:    #0f1929;
