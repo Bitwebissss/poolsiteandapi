@@ -955,11 +955,34 @@ ws.onclose = () => console.log('disconnected');`;
       if (!menu) return;
       menu.replaceChildren();
 
+      const poolSymbols = {};
+      pools.forEach((p) => { if (p.coin?.symbol) poolSymbols[p.id] = p.coin.symbol; });
+
       const setActive = (id, text) => {
         if (lbl) lbl.textContent = text;
         menu.querySelectorAll('.dropdown-item').forEach((b) => {
           b.classList.toggle('active', b.dataset.poolId === id);
         });
+        const symbol = poolSymbols[id];
+        const poolIconEl = document.querySelector('.mp-pool-icon');
+        if (poolIconEl) {
+          const pbtn = poolIconEl.closest('button');
+          let imgEl = pbtn?.querySelector('.mp-pool-coin-img');
+          if (!symbol) {
+            if (imgEl) imgEl.remove();
+            poolIconEl.style.display = '';
+          } else {
+            if (!imgEl) {
+              imgEl = document.createElement('img');
+              imgEl.className = 'mp-pool-coin-img';
+              poolIconEl.insertAdjacentElement('afterend', imgEl);
+            }
+            imgEl.alt = symbol;
+            imgEl.onerror = () => { imgEl.remove(); poolIconEl.style.display = ''; };
+            imgEl.onload  = () => { poolIconEl.style.display = 'none'; };
+            imgEl.src = `assets/images/${symbol.toLowerCase()}.svg`;
+          }
+        }
       };
 
       pools.forEach((p) => {
