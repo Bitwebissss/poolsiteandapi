@@ -983,6 +983,28 @@ ws.onclose = () => console.log('disconnected');`;
             imgEl.src = `assets/images/${symbol.toLowerCase()}.svg`;
           }
         }
+        // brand coin icon (same as pool.js)
+        const brand = document.querySelector('.mp-brand');
+        if (brand) {
+          let brandIcon = brand.querySelector('.mp-brand-coin');
+          if (!brandIcon) {
+            brandIcon = document.createElement('span');
+            brandIcon.className = 'mp-brand-coin';
+            brand.insertBefore(brandIcon, brand.firstChild);
+          }
+          brandIcon.innerHTML = '';
+          if (!symbol) {
+            const i = document.createElement('i');
+            i.className = 'fa-solid fa-cube';
+            brandIcon.appendChild(i);
+          } else {
+            const img = document.createElement('img');
+            img.src = `assets/images/${symbol.toLowerCase()}.svg`;
+            img.alt = symbol;
+            img.onerror = () => { img.remove(); const i = document.createElement('i'); i.className = 'fa-solid fa-cube'; brandIcon.appendChild(i); };
+            brandIcon.appendChild(img);
+          }
+        }
       };
 
       pools.forEach((p) => {
